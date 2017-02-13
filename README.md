@@ -7,7 +7,7 @@ Package license: BSD 3-Clause
 
 Feedstock license: BSD 3-Clause
 
-Summary: Python bindings and utilities for GeoJSON
+Summary: Python bindings and utilities for GeoJSON.
 
 
 
