@@ -1,4 +1,4 @@
-{% set version = "2.0.0" %}
+{% set version = "2.1.0" %}
 
 package:
   name: geojson
@@ -6,10 +6,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/g/geojson/geojson-{{ version }}.tar.gz
-  sha256: 6db845b73d6e0df70489128cad98026d9e115eb5ee0beca9725011f8da434211
+  sha256: a4b6d1ac8bb9f0e58f7985b2d382c8c83db393a496263ff0d0226bf50ef8f760
 
 build:
   number: 0
+  noarch: python
   preserve_egg_dir: True
   script: python setup.py install --single-version-externally-managed --record record.txt
 
@@ -28,7 +29,7 @@ about:
   home: https://github.com/frewsxcv/python-geojson
   license: BSD 3-Clause
   license_file: LICENSE.rst
-  summary: 'Python bindings and utilities for GeoJSON.'
+  summary: 'Python bindings and utilities for GeoJSON'
 
 extra:
   recipe-maintainers:
