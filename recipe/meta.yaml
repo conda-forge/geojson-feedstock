@@ -1,4 +1,4 @@
-{% set version = "2.3.0" %}
+{% set version = "2.4.1" %}
 
 package:
   name: geojson
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/g/geojson/geojson-{{ version }}.tar.gz
-  sha256: c8873d12421665f6731b8e4c3b2484a4516c0d9b286c26cb7cffa781d062301a
+  sha256: b175e00a76d923d6e7409de0784c147adcdd6e04b311b1d405895a4db3612c9d
 
 build:
   number: 0
