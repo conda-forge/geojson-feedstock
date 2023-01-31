@@ -1,34 +1,39 @@
+{% set name = "geojson" %}
 {% set version = "3.0.0" %}
 
 package:
-  name: geojson
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/g/geojson/geojson-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/geojson-{{ version }}.tar.gz
   sha256: ea1df8246bdeb2bbf20d0756720911893414f9cee46b336a1e882d2cd60cfba1
 
 build:
-  number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
   host:
-    - python
+    - python >=3.7
     - pip
   run:
-    - python
+    - python >=3.7
 
 test:
   imports:
     - geojson
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
-  home: https://github.com/frewsxcv/python-geojson
+  home: https://github.com/jazzband/geojson
+  summary: Python bindings and utilities for GeoJSON
   license: BSD-3-Clause
   license_file: LICENSE.rst
-  summary: Python bindings and utilities for GeoJSON
 
 extra:
   recipe-maintainers:
