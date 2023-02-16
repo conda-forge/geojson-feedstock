@@ -1,28 +1,34 @@
+{% set name = "geojson" %}
 {% set version = "3.0.1" %}
 
 package:
-  name: geojson
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/g/geojson/geojson-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/geojson-{{ version }}.tar.gz
   sha256: ff3d75acab60b1e66504a11f7ea12c104bad32ff3c410a807788663b966dee4a
 
 build:
-  number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
   host:
-    - python
+    - python >=3.7,<3.12
     - pip
   run:
-    - python
+    - python >=3.7,<3.12
 
 test:
   imports:
     - geojson
+  commands:
+    - pip check
+  requires:
+    - pip
+
 
 about:
   home: https://github.com/frewsxcv/python-geojson
