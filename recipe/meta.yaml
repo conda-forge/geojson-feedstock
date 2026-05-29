@@ -1,5 +1,5 @@
 {% set name = "geojson" %}
-{% set version = "3.2.0" %}
+{% set version = "3.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/geojson-{{ version }}.tar.gz
-  sha256: b860baba1e8c6f71f8f5f6e3949a694daccf40820fa8f138b3f712bd85804903
+  sha256: 92e83b9cb378a450b42f1207bb9b2a031f9fc89185f335153c44369b8b8b71fd
 
 build:
   noarch: python
